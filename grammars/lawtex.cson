@@ -1,0 +1,75 @@
+'scopeName': 'source.lawtex'
+'name': 'Lawtex'
+'fileTypes': [
+	'lawtex'
+]
+'patterns': [
+	{
+		'name': 'comment.block.lawtex'
+		'begin': '/\\*'
+		'beginCaptures':
+			'0':
+				'name': 'punctuation.definition.comment.begin.lawtex'
+		'end': '\\*/'
+		'endCaptures':
+			'0':
+				'name': 'punctuation.definition.comment.end.lawtex'
+	}
+	{
+		'name': 'comment.line.double-slash.lawtex'
+		'begin': '//'
+		'beginCaptures':
+			'0':
+				'name': 'punctuation.definition.comment.lawtex'
+		'end': '$'
+	}
+	{
+		'name': 'string.quoted.double.lawtex'
+		'begin': '"'
+		'beginCaptures':
+			'0':
+				'name': 'punctuation.definition.string.begin.lawtex'
+		'end': '"'
+		'endCaptures':
+			'0':
+				'name': 'punctuation.definition.string.end.lawtex'
+		'patterns': [
+			{
+				'name': 'constant.character.escape.lawtex'
+				'match': '\\\\.'
+			}
+		]
+	}
+	{
+		'match': '\\b(?:metainfo|head|body|foot|extra|where|extends|externs|template|list|struct|dependency|branch|topic|loop|period|if|else|elseif|foreach|print|use)\\b'
+		'name': 'entity.name.section.lawtex'
+	}
+	{
+		'match': '\\b(?:this|value|id|mask|transient|itemsOnPage|language|style|type|default|description|tags|statement|overview|components|audience|inputs|functionalities|warnings|upgrades|title|name|label|order|mandatory|version|index|lower|upper|separator|request|element|help|tip|atomic|fields|loaders|options|key|operation|declarations|operations)\\b'
+		'name': 'variable.language.lawtex'
+	}
+	{
+		'match': '\\b(?:NOT|AND|OR|XOR|EXISTS|FORALL|IN)'
+		'name': 'keyword.operator.logical.lawtex'
+	}
+	{
+		'match': '\\b(?:List|Object|String|Integer|Real|Boolean|Date|Time|Text|Document|Currency|Vector|Struct)\\b'
+		'name': 'storage.type.primitive.lawtex'
+	}
+	{
+		'match': '\\b[A-Z]\\w*\\b'
+		'name': 'storage.type.class.lawtex'
+	}
+	{
+		'match': '\\b(?:true|false|null)\\b'
+		'name': 'constant.language.lawtex'
+	}
+	{
+		'match': '(?:\\[|\\]|=|~=|<=|>=|<|>|\\||\\-|\\+|\\&|\\*|\\/|%|\\^)'
+		'name': 'keyword.operator.arithmetic.assignment.lawtex'
+	}
+	{
+		'match': '(?:(?:0(?:x|X)[0-9a-fA-F]*)|(?:\\+|-)?\\b(?:(?:[0-9]+(?:\\.[0-9]*)?)|(?:\\.[0-9]+))(?:(?:e|E)(?:\\+|-)?[0-9]+)?)(?:[LlFfUuDd]|UL|ul)?\\b'
+		'name': 'constant.numeric.lawtex'
+	}
+]
