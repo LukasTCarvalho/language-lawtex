@@ -1,0 +1,133 @@
+'.source.lawtex':
+	'fieldlist':
+		'prefix': 'fieldlist'
+		'body': '${1:+|&|-}[${2:fieldListAlias}] : List("${3:opt1}","${4:opt2}") { \n\tname = "${5:...}" \n\tatomic = ${7:true|false}\n}'
+	'index':
+		'prefix': 'index'
+		'body': 'index = true'
+	'expandedNumber':
+		'prefix': 'expandedNumber'
+		'body': 'expandedNumber(<${1:valueInNumbers}>)'
+	'commentary':
+		'prefix': 'commentary'
+		'body': '/* ${1:...} */'
+	'foreach':
+		'prefix': 'foreach'
+		'body': 'foreach(${1:<elem>} IN ${2:|vect|}) ${3:where (separator = "%f; %s; %p; e %l.") }{\n\t${4:print "..." & ${1:<elem>}\n\t}\n}'
+	'getByKey':
+		'prefix': 'getByKey'
+		'body': '${1:<varlist>}.getByKey(${2:"KeyStringOuNumero"})'
+	'ifStruct':
+		'prefix': 'ifStruct'
+		'body': '${1:*}struct[${2:StructAlias}] {\n\tname = "${5:...}"\n\trequest = "${6:...}"\n\thelp = "${7:...}"\n\tid = "${8:...}" & [${9:fieldAliasQualquer}]\n\tfields {\n\t\t${10:+|&|-}[${11:fieldAlias}] : ${12:String|List|Integer|Real|Boolean|Date|Time} { \n\t\t\tname = "${13:...}"\n\t\t\trequest = "${14:...}"\n\t\t\tkey = ${15:true|false}\n\t\t\tdefault = "${16:...}"\n\t\t\thelp = "${17:...}"\n\t\t},\n\t\tif (${18:condition with field}) {\n\t\t\t${19:+|&|-}[${20:fieldStructAlias}] : ${21:*StructName}\n\t\t} else {\n\t\t\t${22:+|&|-}[${23:otherFieldStructAlias}] : ${24:*OtherStructName}\n\t\t}\n\t}\n}'
+	'lowercase':
+		'prefix': 'lowercase'
+		'body': 'lowercase(${1:"}${2:<}${4:aliasElem|text}${3:>}${1:"})'
+	'select':
+		'prefix': 'select'
+		'body': '|${1:vectorGhostElemOrigin}|.select(|${2:vectorElemReceptor}|)'
+	'fieldPrimitives':
+		'prefix': 'fieldPrimitives'
+		'body': '${1:+|&|-}[${2:fieldAlias}] : ${3:String|Integer|Real|Currency|Boolean|Date|Time} { \n\tname = "${4:...}"\n\trequest = "${5:...}"\n\thelp = "${6:...}"\n\tdefault = "${7:...}"\n}'
+	'newitem':
+		'prefix': 'newitem'
+		'body': '\i'
+	'variable':
+		'prefix': 'variable'
+		'body': '${1:+|&|-}<${2:variableAlias}> : ${3:String|Integer|Real|Currency|Boolean|Date|Time} { \n\tname = "${4:...}"\n\trequest = "${5:...}"\n\tdefault = "${6:...}"\n\thelp = "${7:...}"\n}'
+	'branch':
+		'prefix': 'branch'
+		'body': '${1:*}branch[${2:BRC_AliasBranch}] {\n\toperations {\n\t\t${3:...}\n\t}\n}'
+	'vectorStruct':
+		'prefix': 'vectorStruct'
+		'body': '${1:+|&|-}|${2:vectorAlias}| : Vector[${3:*}${4:StructName}] { \n\tname = "${5:...}"\n\titemsOnPage = "${6:...}"\n\trequest = "${7:...}"\n\tlower = ${8:...}\n\tupper = ${9:...}\n}'
+	'listInline':
+		'prefix': 'listInline'
+		'body': 'List("${1:opt1}","${2:opt2}")'
+	'newline':
+		'prefix': 'newline'
+		'body': '\n'
+	'varSimpleList':
+		'prefix': 'varSimpleList'
+		'body': '${1:+|&|-}<${2:varListAlias}> : List("${3:option1}", "${4:option2}") { \n\tname = "${5:...}"\n\trequest = "${6:...}"\n\tdefault = "${7:...}"\n\tatomic = ${8:true|false}\n\thelp = "${9:...}"\n}'
+	'if':
+		'prefix': 'if'
+		'body': 'if ( ${1:<x>}.isEmpty() ) {\n\t${2:...}\n}'
+	'elseIf':
+		'prefix': 'elseIf'
+		'body': 'elseif ( ${1:...} ) {\n\t${2: }\n} else {\n\t${3: }\n}'
+	'varStruct':
+		'prefix': 'varStruct'
+		'body': '${1:+|&|-}<${2:objectAlias}> : ${3:*StructName}'
+	'grammar':
+		'prefix': 'grammar'
+		'body': '${1:|pessoas|}.grammar("${2:Texto em masculino singular}")'
+	'topic':
+		'prefix': 'topic'
+		'body': '${1:*}topic[${2:TOP_AliasTopic}] {\n\ttitle = "${3:...}"\n\toperations {\n\t\t${4:...}\n\t}\n}'
+	'inVectorElem':
+		'prefix': 'inVectorElem'
+		'body': '<${1:elem}> IN |${2:vectorAlias}|'
+	'struct':
+		'prefix': 'struct'
+		'body': '${1:*}struct[${2:StructAlias}] {\n\tname = "${5:...}"\n\trequest = "${6:...}"\n\tfields {\n\t\t${7:+|&|-}[${8:fieldAlias}] : ${9:String|List|Integer|Real|Currency|Boolean|Date|Time} { \n\t\t\tname = "${10:...}"\n\t\t}\n\t}\n}'
+	'beginEndList':
+		'prefix': 'beginEndList'
+		'body': 'beginList("a"),\n\tprint "\i${1:...}",\nendList()'
+	'emph':
+		'prefix': 'emph'
+		'body': 'emph(${1:"${2:...}"})'
+	'template':
+		'prefix': 'template'
+		'body': 'template[TEMP_${1:TemplateAlias}] { \n\tmetainfo { \n\t\tlanguage = "pt_BR"\n\t\tname = "${2:...}"\n\t\tdeclarations {\n\t\t\t${3:...}\n\t\t} \n\t} \n\thead { \n\t\ttitle = "${4:...}" \n \t} \n \tbody {\n\t\toperations {\n\t\t\t${5:...}\n\t\t}\n \t}\n}'
+	'inListOption':
+		'prefix': 'inListOption'
+		'body': '"${1:StringKeyOfList}" IN <${2:varList}>'
+	'vectorAtomic':
+		'prefix': 'vectorAtomic'
+		'body': '${1:+|&|-}|${2:vectorAlias}| : Vector[${3:String|Integer|Real|Currency|Boolean|Date|Time}] { \n\tname = "${4:...}"\n\trequest = "${5:...}"\n\titemsOnPage = "${6:...}"\n\thelp = "${7:...}"\n\tlower = ${8:...}\n\tupper = ${9:...}\n}'
+	'newsection':
+		'prefix': 'newsection'
+		'body': '\s'
+	'isEmpty':
+		'prefix': 'isEmpty'
+		'body': 'isEmpty()'
+	'ifElse':
+		'prefix': 'ifElse'
+		'body': 'if ( ${1:<x>}.isEmpty() ) {\n \t${2:...}\n} else {\n\t${3:...}\n}'
+	'fieldStruct':
+		'prefix': 'fieldStruct'
+		'body': '${1:+|&|-}[${2:fieldAlias}] : ${3:*}${4:StructName}'
+	'varListMulticolumns':
+		'prefix': 'varListMulticolumns'
+		'body': '${1:+|&|-}<${2:varListAlias}> : List[${3:*}${4:AliasList}] { \n\tname = "${5:...}"\n\trequest = "${6:...}"\n\tdefault = "${7:...}"\n\tatomic = ${8:true|false}\n\thelp = "${9:...}"\n}'
+	'print':
+		'prefix': 'print'
+		'body': 'print "${1:...}"'
+	'newparagraph':
+		'prefix': 'newparagraph'
+		'body': '\p'
+	'mandatory':
+		'prefix': 'mandatory'
+		'body': '${1:<}${2:alias}${3:>}.mandatory = "${4:+|&|-}"'
+	'beginEndSignatureList':
+		'prefix': 'beginEndSignatureList'
+		'body': 'beginSignatureList("Testemunhas", 2, "left"),\nsign("nome:\nRG:"),\nsign("nome:\nRG:"),\nendSignatureList()'
+	'use':
+		'prefix': 'use'
+		'body': 'use ${1:*}${2:topic|branch}[${3:XXX_Alias}]'
+	'ifElseIf':
+		'prefix': 'ifElseIf'
+		'body': 'if ( ${1:<x>}.isEmpty() ) {\n \t${2:...}\n} elseif ( ${3:<y>}.isEmpty() ) {\n \t${4:...}\n} else {\n\t${5:...}\n}'
+	'todoTask':
+		'prefix': 'todoTask'
+		'body': '/* TODO - verificar ${1:...} */'
+	'size':
+		'prefix': 'size'
+		'body': '|${1:vectorAlias}|.size()'
+	'listMulticolumns':
+		'prefix': 'listMulticolumns'
+		'body': '${1:*}list[${2:AliasList}] {\n\tfields = {${3:"Key1"}, ${4:"Key2"}}\n\toptions = (${56:{"Option1a","Option2a"}}, ${6:{"Option1b","Option2b"}})\n\ttype = "String"\n}'
+	'printIf':
+		'prefix': 'printIf'
+		'body': 'printIf(${1:condition}, "${2:consequenceTRUE}", "${3:consequenceFALSE}")'
