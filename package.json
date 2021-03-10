@@ -1,7 +1,7 @@
 {
 	"name": "language-lawtex",
 	"main": "./lib/language-lawtex",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "The Lawtex syntax highlighter language definition",
 	"keywords": [],
 	"repository": "https://github.com/looplexLukasC/language-lawtex",
